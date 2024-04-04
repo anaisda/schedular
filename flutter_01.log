@@ -1,0 +1,78 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+PathAccessException: PathAccessException: Deletion failed, path = 'build\c851ff47e3639af1ef9ce9a7708ed9b6.cache.dill.track.dill' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:193:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:414:7)
+#2      _File._deleteSync (dart:io/file_impl.dart:326:50)
+#3      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:414:7)
+#4      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#5      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#6      ErrorHandlingFileSystem.deleteIfExists (package:flutter_tools/src/base/error_handling_io.dart:80:12)
+#7      ErrorHandlingFile.copySync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:349:33)
+#8      _runSync (package:flutter_tools/src/base/error_handling_io.dart:590:14)
+#9      ErrorHandlingFile.copySync (package:flutter_tools/src/base/error_handling_io.dart:333:5)
+#10     ResidentRunner.cacheInitialDillCompilation (package:flutter_tools/src/resident_runner.dart:1352:18)
+#11     ResidentWebRunner.run.<anonymous closure> (package:flutter_tools/src/isolated/resident_web_runner.dart:315:11)
+<asynchronous suspension>
+#12     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:24)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.16.2, on Microsoft Windows [Version 10.0.19045.3693], locale en-US)
+    [32m•[39m Flutter version 3.16.2 on channel stable at D:\flutter_windows_3.13.7-stable\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 9e1c857886 (2 weeks ago), 2023-11-30 11:51:18 -0600
+    [32m•[39m Engine revision cf7a9d0800
+    [32m•[39m Dart version 3.2.2
+    [32m•[39m DevTools version 2.28.3
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    [32m•[39m Android SDK at C:\Users\Blue\AppData\Local\Android\sdk
+    [31m✗[39m cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    [31m✗[39m Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/windows#android-setup for more details.
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[32m[✓][39m Visual Studio - develop Windows apps (Visual Studio Community 2022 17.2.6)
+    [32m•[39m Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    [32m•[39m Visual Studio Community 2022 version 17.2.32630.192
+    [32m•[39m Windows 10 SDK version 10.0.19041.0
+
+[32m[✓][39m Android Studio (version 2022.3)
+    [32m•[39m Android Studio at D:\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-10027231)
+
+[32m[✓][39m Connected device (3 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.19045.3693]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome 120.0.6099.109
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 119.0.2151.93
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 1 category.
+```
